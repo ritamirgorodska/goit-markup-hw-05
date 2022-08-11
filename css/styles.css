@@ -9,6 +9,7 @@
   --btn-background-color: #188ce8;
   --logo-header-color: #000000;
   --icon-color: #afb1b8;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -128,6 +129,7 @@ section {
 }
 
 .header-item .header-link {
+  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -138,8 +140,30 @@ section {
 .header-link:focus {
   color: var(--accent-color);
 }
+
+.header-item .header-link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+  left: 0;
+  bottom: -2px;
+  opacity: 0;
+  transition: opacity 250ms var(--cubic);
+}
+
+.header-item .header-link:hover::after {
+  opacity: 1;
+}
 .header-list .header-link.current {
   color: var(--accent-color);
+}
+
+.header-link.current::after {
+  opacity: 1;
 }
 .header-list {
   display: flex;
@@ -150,6 +174,9 @@ section {
   display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .header-icon {
   fill: currentColor;
@@ -207,11 +234,11 @@ section {
 }
 .hero-btn:hover,
 .hero-btn:focus {
-  background: var(--btn-background-color);
+  background-color: var(--btn-background-color);
 }
 
 .hero-btn {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   border-radius: 4px;
@@ -228,6 +255,9 @@ section {
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--second-title-color);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 /*-- Переваги компанії --SPECIALITY --*/
@@ -271,6 +301,27 @@ section {
   gap: 30px;
 
   flex-basis: 270px;
+}
+.functions-item {
+  position: relative;
+}
+.functions-description {
+  position: absolute;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding-top: 27px;
+
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
 }
 
 /*--Команда компанії--*/
@@ -325,9 +376,15 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .team-soc-icon {
   fill: var(--icon-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .team-soc-link:hover,
@@ -354,10 +411,16 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .clients-icon {
   fill: var(--icon-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -383,6 +446,9 @@ section {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--second-title-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .address {
   font-style: normal;
@@ -399,6 +465,9 @@ section {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .footer-socials {
@@ -430,6 +499,9 @@ section {
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .footer-soc-icon {
   fill: var(--second-title-color);
@@ -463,11 +535,14 @@ section {
   border-radius: 4px;
   outline: none;
   padding: 6px 22px;
+  transition-property: background-color color box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
   color: var(--second-title-color);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -489,6 +564,9 @@ section {
 }
 .portfolio-link {
   display: block;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--cubic);
 }
 
 .portfolio-link:hover,

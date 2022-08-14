@@ -629,7 +629,8 @@ section {
 }
 .portfolio-link {
   display: block;
-  transition: box-shadow var(--transition-duration) var(--cubic);
+  transition: box-shadow var(--transition-duration) var(--cubic),
+    transform var(--transition-duration) var(--cubic);
 }
 
 .portfolio-link:hover,

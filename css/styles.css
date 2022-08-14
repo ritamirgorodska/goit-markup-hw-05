@@ -38,6 +38,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: #757575;
   background-color: #ffffff;
+  padding-top: 80px;
 }
 .list {
   list-style: none;
@@ -115,6 +116,8 @@ section {
 
   border-bottom: 1px solid #ececec;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 5;
 }
@@ -222,9 +225,7 @@ section {
   padding-top: 200px;
   padding-bottom: 200px;
 }
-.hero-container {
-  padding-top: 80px;
-}
+
 .hero-title {
   font-weight: 900;
   font-size: 44px;
@@ -311,14 +312,15 @@ section {
 }
 .functions-description {
   position: absolute;
-  display: block;
+  display: flex;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding-top: 27px;
+  align-items: center;
+  justify-content: center;
 
   color: #ffffff;
   background: rgba(47, 48, 58, 0.8);
@@ -435,6 +437,8 @@ section {
 .footer-container {
   display: flex;
   gap: 70px;
+
+  align-items: baseline;
 }
 
 .footer-link {
@@ -462,9 +466,6 @@ section {
   transition: color var(--transition-duration) var(--cubic);
 }
 
-.footer-socials {
-  margin-top: 12px;
-}
 .footer-title {
   font-weight: 700;
   font-size: 14px;
@@ -512,7 +513,7 @@ section {
   z-index: 10;
   opacity: 1;
   visibility: visible;
-  transition: opacity 1000ms var(--cubic);
+  transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
 }
 
 .modal {
@@ -528,7 +529,7 @@ section {
   left: 50%;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 1000ms var(--cubic);
+  transition: transform 250ms var(--cubic);
 }
 .is-hidden {
   opacity: 0;
@@ -536,7 +537,7 @@ section {
   pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  transform: scale(0.9) translate(-50%, -50%);
+  transform: scale(1.1) translate(-50%, -50%);
 }
 .modal-close {
   position: absolute;
@@ -556,9 +557,6 @@ section {
   fill: var(--logo-header-color);
 }
 /*------- PORTFOLIO------*/
-.portfolio-container {
-  padding-top: 80px;
-}
 
 .portfolio-btn-list {
   display: flex;
@@ -581,7 +579,7 @@ section {
   border-radius: 4px;
   outline: none;
   padding: 6px 22px;
-  transition-property: color background-color box-shadow;
+  transition-property: color, background-color, box-shadow;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--cubic);
 }
@@ -628,7 +626,7 @@ section {
   background-color: rgba(33, 150, 243, 0.9);
   padding: 63px 24px 0px 24px;
   height: 100%;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform var(--transition-duration) var(--cubic);
   overflow: auto;
 }
